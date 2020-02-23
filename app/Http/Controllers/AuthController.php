@@ -16,7 +16,6 @@ class AuthController extends Controller
 	}
 
     public function create(Request $request){
-
     	// ------------------------------------------------------------------------------------
     	// LOGIN AUTHENTICATION LOGIC
     	// ------------------------------------------------------------------------------------
@@ -37,7 +36,8 @@ class AuthController extends Controller
 	        }
 	        else{
 	            return response()->json([
-	            	'errorMsg' => 'The provided credentials are invalid.'
+	            	'errorMsg' => 'The provided credentials are invalid.',
+	            	'request' => $request->all()
 	            ], 403);
 	        }
     	}

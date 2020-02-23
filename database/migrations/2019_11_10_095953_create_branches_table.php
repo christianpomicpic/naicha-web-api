@@ -18,6 +18,7 @@ class CreateBranchesTable extends Migration
             $table->string('name');
             $table->longText('information');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

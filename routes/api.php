@@ -26,7 +26,6 @@ Route::group(['middleware' => ['auth:api']], function (){
 	Route::post('authentication/user/{action}', 'AuthController@create');
 	Route::post('authentication-check', 'AuthController@show');
 
-
 	Route::get('get-all-users', 'UserController@show');
 	Route::post('create-new-user', 'UserController@create');
 	Route::post('update-user-status/{action}', 'UserController@update');
@@ -34,4 +33,9 @@ Route::group(['middleware' => ['auth:api']], function (){
 	Route::get('get-all-items', 'InventoryController@show');
 	Route::post('create-new-item', 'InventoryController@create');
 	Route::post('update-item', 'InventoryController@update');
+
+	Route::get('get-branches', 'BranchController@show');
+	Route::get('get-branch-info', 'BranchController@index');
+	Route::post('create-branch', 'BranchController@create');
+	Route::post('update-branch', 'BranchController@update');
 });
